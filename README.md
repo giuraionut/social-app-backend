@@ -6,7 +6,9 @@
 <img src = "https://img.shields.io/badge/MARIA DB-darkblue">
 </p>
 
-### Social Application based on [Reddit](https://www.reddit.com/) made with Spring Boot, MariaDB and Angular
+### Social Application based on [Reddit](https://www.reddit.com/) made with Spring Boot and MariaDB.
+
+Checkout the frontend [here](https://github.com/giuraionut/social-app-frontend).
 
 Right now the project has the following features available:
 * Create/delete account
