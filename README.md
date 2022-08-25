@@ -1,27 +1,114 @@
-# Frontend
+# Social Application like [Reddit](https://www.reddit.com/).
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
+<p align = "center">
+<img src = "https://img.shields.io/badge/JAVA-blue">
+<img src = "https://img.shields.io/badge/SPRING BOOT-green">
+<img src = "https://img.shields.io/badge/MARIA DB-darkblue">
+</p>
 
-## Development server
+### Social Application based on [Reddit](https://www.reddit.com/) made with Spring Boot, MariaDB and Angular
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Right now the project has the following features available:
+* Create/delete account
+* Create/join communities
+* Create posts in communities
+* Delete comments
+* Comment to posts/reply to comments
+* Show user all his comments/posts/communities and other account information
+* Vote (up vote or down vote) comments and posts.
+* Hide posts that you don't want to see again.
+* Backend is secured with JWT and role based permission.
+* Create a feed from user's joined communities
+* Get top X most recent posts
+---
+  
+## API ENDPOINTS
+### `User` `api/v1/user`
+---
+### Post
+```
+api/v1/user/register
+api/v1/user/me/logout
+api/v1/user/me/jwt/refresh
+api/v1/user/me/uit/refresh
+```
+### Put
+```
+api/v1/user/password
+api/v1/user/email
+```
+### Delete
+```
+api/v1/user/ac
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+### `Community` `api/v1/community`
+---
+### Post
+```
+api/v1/community/create_community
+```
+### Delete
+```
+api/v1/community/{title}
+```
+### Get
+```
+api/v1/community/{username}/communities
+api/v1/community/{title}/about
+api/v1/community/{title}/{username}
+api/v1/community/{username}/joined
+api/v1/community/top
+```  
+### Put
+```
+api/v1/community/{title}/{username}
+```
+### `Post` `api/v1/post`
+---
+### Post
+```
+api/v1/post/{communityTitle}/add_post
+```
+### Delete
+```
+api/v1/post/{postId}
+```
+### Put
+```
+api/v1/post/{postId}/vote
+api/v1/post/{postId}/{username}/visibility
+```  
+### Get
+```
+api/v1/post/{communityTitle}/all
+api/v1/post/{username}/owned/all
+api/v1/post/{username}/feed
+api/v1/post/{postId}
+api/v1/post/{postId}/votes
+api/v1/post/{username}/voted
+api/v1/post/{postId}/comments/count
+api/v1/post/{username}/hidden
+api/v1/post/most_recent
+```
+### `Comment` `api/v1/comment`
+---
+### Post
+```
+api/v1/comment/post/{postId}
+api/v1/comment/parent_comment/{commentId}
+api/v1/comment/{commentId}/vote/{value}
+```
+### Delete
+```
+api/v1/comment/{commentId}
+```
+### Get
+```
+api/v1/comment/post/{postId}
+api/v1/comment/{commentId}/childs
+api/v1/comment/{username}
+api/v1/comment/{commentId}/childs/count
+api/v1/comment/{commentId}/votes/value
+api/v1/comment/voted/all
+```
