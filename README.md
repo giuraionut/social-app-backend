@@ -8,7 +8,7 @@
 
 ### Social Application based on [Reddit](https://www.reddit.com/) made with Spring Boot and MariaDB.
 
-Checkout the frontend [here](https://github.com/giuraionut/social-app-frontend).
+Check out the frontend [here](https://github.com/giuraionut/social-app-frontend).
 
 Right now the project has the following features available:
 * Create/delete account
